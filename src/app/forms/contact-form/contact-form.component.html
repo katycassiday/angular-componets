@@ -1,0 +1,38 @@
+<p>contact-form works!</p>
+<router-outlet></router-outlet>
+
+
+<div class="contact">
+<form class="contact-sheet" [formGroup]="form">
+<mat-form-field appearance="fill">
+    <mat-label>First and Last Name</mat-label>
+    <input matInput
+    type="name" 
+    formControlName="name" >
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>E-mail Address</mat-label>
+    <input matInput
+    type="email"
+    formControlName="email">
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Reason for Contact</mat-label>
+    <mat-select formControlName="reason">
+      <mat-option value="one">Returns & Exchanges</mat-option>
+      <mat-option value="two">Subscription & Billing</mat-option>
+      <mat-option value="three">Technical Support</mat-option>
+      <mat-option value="four">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="contact-btn" [disabled]="!form.valid">Send</button>
+</form>
+
+</div>
